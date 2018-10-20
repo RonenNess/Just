@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{d6f15a8d-f870-40ac-9200-974a8c7398e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Files">
+      <UniqueIdentifier>{1028ced6-03ec-4c62-9a2d-39da958e4cbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\DLLs">
+      <UniqueIdentifier>{28f90584-1b70-477a-a617-a50d5e0f2bbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Execute">
+      <UniqueIdentifier>{bfe47d2a-55a2-454e-aa24-bdcdf22eef48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Http">
+      <UniqueIdentifier>{92899091-810c-4c13-a39a-9978ec055e51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ToString">
+      <UniqueIdentifier>{4a4bbb75-fd25-457e-85eb-5a7ff04cc0be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Misc">
+      <UniqueIdentifier>{d4305f7c-3f43-4ccd-baee-a199942ec2c4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Just.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Files\All.h">
+      <Filter>Source\Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Files\Write.h">
+      <Filter>Source\Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Files\Read.h">
+      <Filter>Source\Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Files\Manage.h">
+      <Filter>Source\Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DLLs\All.h">
+      <Filter>Source\DLLs</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DLLs\Load.h">
+      <Filter>Source\DLLs</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Execute\All.h">
+      <Filter>Source\Execute</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Execute\Exe.h">
+      <Filter>Source\Execute</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Execute\Scripts.h">
+      <Filter>Source\Execute</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Http\All.h">
+      <Filter>Source\Http</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Http\HttpRequests.h">
+      <Filter>Source\Http</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ToString\All.h">
+      <Filter>Source\ToString</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ToString\Basics.h">
+      <Filter>Source\ToString</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ToString\Lists.h">
+      <Filter>Source\ToString</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ToString\Maps.h">
+      <Filter>Source\ToString</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Files\Folders.h">
+      <Filter>Source\Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Misc\All.h">
+      <Filter>Source\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Misc\StringConvert.h">
+      <Filter>Source\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ToString\Arrays.h">
+      <Filter>Source\ToString</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Just.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
