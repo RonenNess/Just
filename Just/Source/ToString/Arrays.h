@@ -1,7 +1,7 @@
 /*!
-* \file	Source\ToString\Lists.h.
+* \file	Source\ToString\Arrays.h.
 *
-* \brief	Convert iterable lists to string.
+* \brief	Convert arrays to string.
 */
 #pragma once
 #include "Basics.h"

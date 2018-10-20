@@ -8,7 +8,7 @@ There's nothing too sophisticated about this lib; Its just a set of useful funct
 
 ## How To Use
 
-This is a headers-only library, meaning you don't need to build any dlls or lib to use. Just include the files in your project and you're set to go.
+This is a headers-only library, meaning you don't need to build any dlls or lib to use. Simply include the files from `Just/Source/` in your project and you're set to go.
 
 ## API Overview
 
