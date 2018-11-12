@@ -164,13 +164,16 @@
     <ClInclude Include="Source\Http\All.h" />
     <ClInclude Include="Source\Http\HttpRequests.h" />
     <ClInclude Include="Source\Just.h" />
-    <ClInclude Include="Source\Misc\All.h" />
-    <ClInclude Include="Source\Misc\StringConvert.h" />
-    <ClInclude Include="Source\ToString\All.h" />
-    <ClInclude Include="Source\ToString\Arrays.h" />
-    <ClInclude Include="Source\ToString\Basics.h" />
-    <ClInclude Include="Source\ToString\Lists.h" />
-    <ClInclude Include="Source\ToString\Maps.h" />
+    <ClInclude Include="Source\SharedMemory\All.h" />
+    <ClInclude Include="Source\SharedMemory\SharedMemory.h" />
+    <ClInclude Include="Source\Strings\All.h" />
+    <ClInclude Include="Source\Strings\Convert\All.h" />
+    <ClInclude Include="Source\Strings\Convert\StringConvert.h" />
+    <ClInclude Include="Source\Strings\ToString\All.h" />
+    <ClInclude Include="Source\Strings\ToString\Arrays.h" />
+    <ClInclude Include="Source\Strings\ToString\Basics.h" />
+    <ClInclude Include="Source\Strings\ToString\Lists.h" />
+    <ClInclude Include="Source\Strings\ToString\Maps.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>

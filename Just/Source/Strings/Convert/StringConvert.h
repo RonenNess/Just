@@ -1,5 +1,5 @@
 /*!
-* \file	Source\Misc\StringConvert.h.
+* \file	Source\Strings\Convert\StringConvert.h.
 *
 * \brief	Converting string to different types.
 */
@@ -10,7 +10,7 @@
 
 namespace Just
 {
-	namespace Misc
+	namespace StringConvert
 	{
 		/*!
 		* \fn	void StringToLPCWSTR(const std::string& s)

@@ -12,8 +12,8 @@
 #include <sstream>
 #include <unordered_map>
 #include <winhttp.h>
-#include "../Misc/StringConvert.h"
-#include "../ToString/Maps.h"
+#include "../Strings/Convert/StringConvert.h"
+#include "../Strings/ToString/Maps.h"
 
 #pragma comment(lib, "winhttp.lib")
 
@@ -141,7 +141,7 @@ namespace Just
 				hRequest = NULL;
 
 			// use WinHttpOpen to obtain a session handle.
-			LPCWSTR useragent; Just::Misc::StringToLPCWSTR(_useragent, useragent);
+			LPCWSTR useragent; Just::StringConvert::StringToLPCWSTR(_useragent, useragent);
 			hSession = WinHttpOpen(useragent,
 				WINHTTP_ACCESS_TYPE_DEFAULT_PROXY,
 				WINHTTP_NO_PROXY_NAME,
@@ -154,7 +154,7 @@ namespace Just
 			__HandlesReleaser hSessionR(hSession);
 
 			// specify an HTTP server.
-			LPCWSTR lphost; Just::Misc::StringToLPCWSTR(host, lphost);
+			LPCWSTR lphost; Just::StringConvert::StringToLPCWSTR(host, lphost);
 			hConnect = WinHttpConnect(hSession, lphost, port, 0);
 			delete[] lphost;
 			__ReturnHttpErrorIfFailed(hConnect, FailedToConnect);
@@ -163,8 +163,8 @@ namespace Just
 			__HandlesReleaser hConnectR(hConnect);
 
 			// create an HTTP Request handle.
-			LPCWSTR wmethod; Just::Misc::StringToLPCWSTR(method, wmethod);
-			LPCWSTR waction; Just::Misc::StringToLPCWSTR(action, waction);
+			LPCWSTR wmethod; Just::StringConvert::StringToLPCWSTR(method, wmethod);
+			LPCWSTR waction; Just::StringConvert::StringToLPCWSTR(action, waction);
 			hRequest = WinHttpOpenRequest(hConnect,
 				wmethod,
 				waction,
@@ -181,11 +181,11 @@ namespace Just
 
 			// set additional headers
 			LPCWSTR headers = WINHTTP_NO_ADDITIONAL_HEADERS;
-			if (additionalHeaders.size()) Just::Misc::StringToLPCWSTR(additionalHeaders, headers);
+			if (additionalHeaders.size()) Just::StringConvert::StringToLPCWSTR(additionalHeaders, headers);
 
 			// set content
 			LPCWSTR contentBuff = WINHTTP_NO_REQUEST_DATA;
-			if (content.size()) Just::Misc::StringToLPCWSTR(content, contentBuff);
+			if (content.size()) Just::StringConvert::StringToLPCWSTR(content, contentBuff);
 
 			// send the Request.
 			bResults = WinHttpSendRequest(hRequest,

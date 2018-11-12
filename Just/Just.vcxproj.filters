@@ -28,11 +28,17 @@
     <Filter Include="Source\Http">
       <UniqueIdentifier>{92899091-810c-4c13-a39a-9978ec055e51}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\ToString">
-      <UniqueIdentifier>{4a4bbb75-fd25-457e-85eb-5a7ff04cc0be}</UniqueIdentifier>
+    <Filter Include="Source\SharedMemory">
+      <UniqueIdentifier>{2d7ffbc7-9b39-4a37-bff5-134e92cd08a1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\Misc">
-      <UniqueIdentifier>{d4305f7c-3f43-4ccd-baee-a199942ec2c4}</UniqueIdentifier>
+    <Filter Include="Source\Strings">
+      <UniqueIdentifier>{012f8c34-4480-4920-b4d3-949c161d3e16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Strings\Convert">
+      <UniqueIdentifier>{a220bdfd-17ed-4175-b7fa-57f5cb31709f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Strings\ToString">
+      <UniqueIdentifier>{f36d9d9c-61e7-4953-9e11-554d6e4f2b8e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -78,29 +84,38 @@
     <ClInclude Include="Source\Http\HttpRequests.h">
       <Filter>Source\Http</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ToString\All.h">
-      <Filter>Source\ToString</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ToString\Basics.h">
-      <Filter>Source\ToString</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ToString\Lists.h">
-      <Filter>Source\ToString</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ToString\Maps.h">
-      <Filter>Source\ToString</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Files\Folders.h">
       <Filter>Source\Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Misc\All.h">
-      <Filter>Source\Misc</Filter>
+    <ClInclude Include="Source\SharedMemory\All.h">
+      <Filter>Source\SharedMemory</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Misc\StringConvert.h">
-      <Filter>Source\Misc</Filter>
+    <ClInclude Include="Source\Strings\All.h">
+      <Filter>Source\Strings</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ToString\Arrays.h">
-      <Filter>Source\ToString</Filter>
+    <ClInclude Include="Source\Strings\Convert\All.h">
+      <Filter>Source\Strings\Convert</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Strings\Convert\StringConvert.h">
+      <Filter>Source\Strings\Convert</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Strings\ToString\All.h">
+      <Filter>Source\Strings\ToString</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Strings\ToString\Arrays.h">
+      <Filter>Source\Strings\ToString</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Strings\ToString\Basics.h">
+      <Filter>Source\Strings\ToString</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Strings\ToString\Lists.h">
+      <Filter>Source\Strings\ToString</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Strings\ToString\Maps.h">
+      <Filter>Source\Strings\ToString</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SharedMemory\SharedMemory.h">
+      <Filter>Source\SharedMemory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

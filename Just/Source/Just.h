@@ -3,5 +3,5 @@
 #include "Files/All.h"
 #include "Execute/All.h"
 #include "DLLs/All.h"
-#include "ToString/All.h"
-#include "Misc/All.h"
+#include "Strings/All.h"
+#include "SharedMemory/All.h"
