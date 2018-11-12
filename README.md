@@ -37,13 +37,17 @@ Functions to execute files and scripts.
 
 Functions to send different Http requests.
 
-### ToString
+### Strings/ToString
 
 Convert different types to string.
 
-### Misc
+### Strings/Convert
 
-Misc utilities and internal stuff.
+Convert different type of strings.
+
+### SharedMemory
+
+Create and use shared memory.
 
 
 ## License
