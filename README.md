@@ -25,8 +25,6 @@ Pretty easy eh? Lets take a quick look at the different APIs JUST provide:
 
 Utilities to read, write and manage files.
 
-#### Examples
-
 ```cpp
 Just::Files::CreatePath(testFolder + "output/foo/bar");
 
@@ -39,8 +37,6 @@ Just::Files::WriteTextFile(testFolder + "temp.txt", "hello world!"));
 
 Dynamically load dlls and methods.
 
-#### Examples
-
 ```cpp
 Just::DLLs::LoadDLL("some_lib.dll");
 ```
@@ -48,8 +44,6 @@ Just::DLLs::LoadDLL("some_lib.dll");
 ### Execute
 
 Functions to execute files and scripts.
-
-#### Examples
 
 ```cpp
 auto ret = Just::Execute::ExecuteCommand("TestEcho.exe");
@@ -59,8 +53,6 @@ bool success = ret.IsSuccess();
 ### Http
 
 Functions to send different Http requests.
-
-#### Examples
 
 ```cpp
 auto html = Just::Http::HttpGet("google.com", 80);
@@ -72,8 +64,6 @@ if (html.good()) {
 ### Strings/ToString
 
 Convert different types to string.
-
-#### Examples
 
 ```cpp
 std::list<int> _list; _list.push_back(1); _list.push_back(2); _list.push_back(3);
@@ -87,8 +77,6 @@ auto dictAsString = Just::ToString::MapToString(_dict, ":", ",");
 
 Convert different type of strings.
 
-#### Examples
-
 ```cpp
 LPCWSTR converted;
 StringConvert::StringToLPCWSTR(originText, converted);
@@ -99,8 +87,6 @@ delete[] converted;
 ### SharedMemory
 
 Create and use shared memory.
-
-#### Examples
 
 ```cpp
 Just::SharedMemory::SharedMemoryClient sm1;
