@@ -32,6 +32,9 @@ namespace Just
 
 			// did process finish executing
 			bool DidFinish = false;
+
+			// return if executed successfully and was a success
+			inline bool IsSuccess() const { return DidFinish && ReturnCode == 0; }
 		};
 
 		/*!
