@@ -4,6 +4,7 @@
 * \brief	Convert maps to string.
 */
 #pragma once
+#include <string>
 #include "Basics.h"
 
 namespace Just

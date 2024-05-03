@@ -4,6 +4,7 @@
 * \brief	Convert iterable lists to string.
 */
 #pragma once
+#include <string>
 #include "Basics.h"
 
 

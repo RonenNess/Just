@@ -8,7 +8,7 @@ Make sure `_WIN32` is not set to exclude everything that is windows-specific whe
 ## How To Use
 
 This is a headers-only library, meaning you don't need to build anything to use it. 
-Simply include the specific files you want from `Just/Source/` if you only need specific parts, or include `just_all.h` if you want everything.
+Simply include the specific files you want from `Just/Source/` if you only need specific parts, or include `JustAll.h` if you want everything.
 
 ## API Overview
 

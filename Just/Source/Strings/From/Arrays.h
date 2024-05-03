@@ -4,6 +4,8 @@
 * \brief	Convert arrays to string.
 */
 #pragma once
+#include <string>
+#include <sstream>
 #include "Basics.h"
 
 
@@ -35,7 +37,7 @@ namespace Just
 				for (int i = 0; i < arrSize; ++i)
 				{
 					contentBuff << Any(data[i]);
-					if (i < arrSize - 1) contentBuff << delimiter;
+					if (i < arrSize - 1) { contentBuff << delimiter; }
 				}
 				return contentBuff.str();
 			}
