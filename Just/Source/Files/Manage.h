@@ -61,7 +61,7 @@ namespace Just
 		 *
 		 * \return	True if file exists, false otherwise.
 		 */
-		inline bool FileExists(const std::string& path) 
+		inline bool Exists(const std::string& path) 
 		{
 			std::ifstream temp(path);
 			bool ret = temp.good();

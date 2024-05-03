@@ -7,16 +7,16 @@
 #ifdef _WIN32
 #include <string>
 #include <windows.h>
-#include "../Strings/Convert/StringConvert.h"
+#include "../Strings/To/All.h"
 
 namespace Just
 {
 	namespace SharedMemory
 	{
 		/**
-		* Holding a shared memory connection.
+		* Manage a shared memory connection.
 		*/
-		class SharedMemoryClient
+		class Client
 		{
 		private:
 
@@ -34,12 +34,12 @@ namespace Just
 			/**
 			* Constructor.
 			*/
-			SharedMemoryClient() : _MapFile(NULL), _Buffer(NULL), _BufferSize(0) {}
+			Client() : _MapFile(NULL), _Buffer(NULL), _BufferSize(0) {}
 
 			/**
 			* Destructor.
 			*/
-			~SharedMemoryClient()
+			~Client()
 			{
 				Close();
 			}
@@ -64,7 +64,7 @@ namespace Just
 
 				// convert path to wide string
 				LPCWSTR converted;
-				StringConvert::StringToLPCWSTR(path, converted);
+				String::To::LpcwStr(path, converted);
 
 				// create shared memory
 				_MapFile = CreateFileMapping(
@@ -121,7 +121,7 @@ namespace Just
 
 				// convert path to wide string
 				LPCWSTR converted;
-				StringConvert::StringToLPCWSTR(path, converted);
+				String::To::LpcwStr(path, converted);
 
 				// create shared memory
 				_MapFile = OpenFileMapping(

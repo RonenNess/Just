@@ -8,10 +8,10 @@
 
 namespace Just
 {
-	namespace ToString
+	namespace String
 	{
 		/*!
-		* \fn	std::string ToString(const std::string& str)
+		* \fn	std::string ParseCStr(const char* str)
 		*
 		* \brief	Convert this object into a string representation.
 		* 			Note: this function is absolutely useless, its used as a trick to handle
@@ -24,32 +24,13 @@ namespace Just
 		*
 		* \return	A std::string that represents this object.
 		*/
-		inline std::string ToString(const std::string& str)
-		{
-			return str;
-		}
-
-		/*!
-		* \fn	std::string ToString(const char* str)
-		*
-		* \brief	Convert this object into a string representation.
-		* 			Note: this function is absolutely useless, its used as a trick to handle
-		* 			unordered maps with strings when we try to serialize them.
-		*
-		* \author	Ronen Ness
-		* \date	10/19/2018
-		*
-		* \param	str	The string to convert.
-		*
-		* \return	A std::string that represents this object.
-		*/
-		inline std::string ToString(const char* str)
+		inline std::string ParseCStr(const char* str)
 		{
 			return std::string(str);
 		}
 
 		/*!
-		* \fn	template <class T> inline std::string ToString(const T& str)
+		* \fn	template <class T> inline std::string ParseType(const T& str)
 		*
 		* \brief	Convert this object into a string representation.
 		*
@@ -62,7 +43,7 @@ namespace Just
 		* \return	obj as an std::string.
 		*/
 		template <class T>
-		inline std::string ToString(const T& obj)
+		inline std::string ParseType(const T& obj)
 		{
 			return std::to_string(obj);
 		}

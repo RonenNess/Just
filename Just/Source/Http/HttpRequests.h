@@ -12,8 +12,8 @@
 #include <sstream>
 #include <unordered_map>
 #include <winhttp.h>
-#include "../Strings/Convert/StringConvert.h"
-#include "../Strings/ToString/Maps.h"
+#include "../Strings/To/All.h"
+#include "../Strings/From/Maps.h"
 
 #pragma comment(lib, "winhttp.lib")
 
@@ -86,7 +86,7 @@ namespace Just
 		};
 
 		/*!
-		 * \fn	void SetHttpUserAgent(const std::string& ua)
+		 * \fn	void SetUserAgent(const std::string& ua)
 		 *
 		 * \brief	Sets useragent for all HTTP requests.
 		 *
@@ -95,13 +95,13 @@ namespace Just
 		 *
 		 * \param	ua	New useragent text.
 		 */
-		void SetHttpUserAgent(const std::string& ua)
+		void SetUserAgent(const std::string& ua)
 		{
 			_useragent = ua;
 		}
 
 		/*!
-		 * \fn	HttpResponse SendHttp(std::string url, int port = 80)
+		 * \fn	HttpResponse Send(std::string url, int port = 80)
 		 *
 		 * \brief	Send an Http request.
 		 *
@@ -117,7 +117,7 @@ namespace Just
 		 *
 		 * \return	A HttpResponse.
 		 */
-		HttpResponse SendHttp(const std::string& host, 
+		HttpResponse Send(const std::string& host, 
 			const std::string& method = "GET",
 			const std::string& action = "/", 
 			const std::string& content = std::string(), 
@@ -141,7 +141,7 @@ namespace Just
 				hRequest = NULL;
 
 			// use WinHttpOpen to obtain a session handle.
-			LPCWSTR useragent; Just::StringConvert::StringToLPCWSTR(_useragent, useragent);
+			LPCWSTR useragent; Just::String::To::LpcwStr(_useragent, useragent);
 			hSession = WinHttpOpen(useragent,
 				WINHTTP_ACCESS_TYPE_DEFAULT_PROXY,
 				WINHTTP_NO_PROXY_NAME,
@@ -154,7 +154,7 @@ namespace Just
 			__HandlesReleaser hSessionR(hSession);
 
 			// specify an HTTP server.
-			LPCWSTR lphost; Just::StringConvert::StringToLPCWSTR(host, lphost);
+			LPCWSTR lphost; Just::String::To::LpcwStr(host, lphost);
 			hConnect = WinHttpConnect(hSession, lphost, port, 0);
 			delete[] lphost;
 			__ReturnHttpErrorIfFailed(hConnect, FailedToConnect);
@@ -163,8 +163,8 @@ namespace Just
 			__HandlesReleaser hConnectR(hConnect);
 
 			// create an HTTP Request handle.
-			LPCWSTR wmethod; Just::StringConvert::StringToLPCWSTR(method, wmethod);
-			LPCWSTR waction; Just::StringConvert::StringToLPCWSTR(action, waction);
+			LPCWSTR wmethod; Just::String::To::LpcwStr(method, wmethod);
+			LPCWSTR waction; Just::String::To::LpcwStr(action, waction);
 			hRequest = WinHttpOpenRequest(hConnect,
 				wmethod,
 				waction,
@@ -181,11 +181,11 @@ namespace Just
 
 			// set additional headers
 			LPCWSTR headers = WINHTTP_NO_ADDITIONAL_HEADERS;
-			if (additionalHeaders.size()) Just::StringConvert::StringToLPCWSTR(additionalHeaders, headers);
+			if (additionalHeaders.size()) Just::String::To::LpcwStr(additionalHeaders, headers);
 
 			// set content
 			LPCWSTR contentBuff = WINHTTP_NO_REQUEST_DATA;
-			if (content.size()) Just::StringConvert::StringToLPCWSTR(content, contentBuff);
+			if (content.size()) Just::String::To::LpcwStr(content, contentBuff);
 
 			// send the Request.
 			bResults = WinHttpSendRequest(hRequest,
@@ -237,7 +237,7 @@ namespace Just
 		}
 
 		/*!
-		* \fn	HttpResponse SendHttp(std::string url, int port = 80)
+		* \fn	HttpResponse Send(std::string url, int port = 80)
 		*
 		* \brief	Send an Http request.
 		*
@@ -252,7 +252,7 @@ namespace Just
 		*
 		* \return	A HttpResponse.
 		*/
-		HttpResponse SendHttp(const std::string& url,
+		HttpResponse Send(const std::string& url,
 			const std::string& method = "GET",
 			const std::string& content = std::string(),
 			const std::unordered_map<std::string, std::string>& additionalHeaders = std::unordered_map<std::string, std::string>(),
@@ -270,14 +270,14 @@ namespace Just
 			if (hostStart != std::string::npos) { host = host.substr(hostStart + 1); }
 
 			// convert headers to string
-			auto headers = Just::ToString::MapToString(additionalHeaders, ":", "\n");
+			auto headers = Just::String::ParseMap(additionalHeaders, ":", "\n");
 
 			// send http request
-			return SendHttp(host, method, action, content, headers, port);
+			return Send(host, method, action, content, headers, port);
 		}
 
 		/*!
-		 * \fn	HttpResponse SendHttpForm(const std::string& url, const std::string& type = "POST", const std::unordered_map<std::string, std::string> data = std::unordered_map<std::string, std::string>(), USHORT port = 80)
+		 * \fn	HttpResponse SendForm(const std::string& url, const std::string& type = "POST", const std::unordered_map<std::string, std::string> data = std::unordered_map<std::string, std::string>(), USHORT port = 80)
 		 *
 		 * \brief	Sends an HTTP form.
 		 *
@@ -291,19 +291,19 @@ namespace Just
 		 *
 		 * \return	A HttpResponse.
 		 */
-		HttpResponse SendHttpForm(const std::string& url,
+		HttpResponse SendForm(const std::string& url,
 			const std::string& method = "POST",
 			const std::unordered_map<std::string, std::string> data = std::unordered_map<std::string, std::string>(),
 			USHORT port = 80)
 		{
 			auto headers = std::unordered_map<std::string, std::string>();
 			headers["Content-Type"] = "application/x-www-form-urlencoded";
-			auto content = Just::ToString::MapToString(data, "=", "&");
-			return SendHttp(url, method, content, headers, port);
+			auto content = Just::String::ParseMap(data, "=", "&");
+			return Send(url, method, content, headers, port);
 		}
 
 		/*!
-		 * \fn	HttpResponse HttpGet(const std::string& url, const std::unordered_map<std::string, std::string> additionalHeaders = std::unordered_map<std::string, std::string>(), USHORT port = 80)
+		 * \fn	HttpResponse Get(const std::string& url, const std::unordered_map<std::string, std::string> additionalHeaders = std::unordered_map<std::string, std::string>(), USHORT port = 80)
 		 *
 		 * \brief	Send HTTP GET request.
 		 *
@@ -315,15 +315,15 @@ namespace Just
 		 *
 		 * \return	A HttpResponse.
 		 */
-		HttpResponse HttpGet(const std::string& url, USHORT port = 80)
+		HttpResponse Get(const std::string& url, USHORT port = 80)
 		{
 			static std::string method = "GET";
 			static std::unordered_map<std::string, std::string> headers;
-			return SendHttp(url, method, std::string(), headers, port);
+			return Send(url, method, std::string(), headers, port);
 		}
 
 		/*!
-		* \fn	HttpResponse HttpPost(const std::string& url, const std::unordered_map<std::string, std::string> additionalHeaders = std::unordered_map<std::string, std::string>(), USHORT port = 80)
+		* \fn	HttpResponse Post(const std::string& url, const std::unordered_map<std::string, std::string> additionalHeaders = std::unordered_map<std::string, std::string>(), USHORT port = 80)
 		*
 		* \brief	Send HTTP POST request.
 		*
@@ -336,16 +336,16 @@ namespace Just
 		*
 		* \return	A HttpResponse.
 		*/
-		HttpResponse HttpPost(const std::string& url,
+		HttpResponse Post(const std::string& url,
 			const std::unordered_map<std::string, std::string> data = std::unordered_map<std::string, std::string>(),
 			USHORT port = 80)
 		{
 			static std::string method = "POST";
-			return SendHttpForm(url, method, data, port);
+			return SendForm(url, method, data, port);
 		}
 
 		/*!
-		* \fn	HttpResponse HttpPut(const std::string& url, const std::unordered_map<std::string, std::string> additionalHeaders = std::unordered_map<std::string, std::string>(), USHORT port = 80)
+		* \fn	HttpResponse Put(const std::string& url, const std::unordered_map<std::string, std::string> additionalHeaders = std::unordered_map<std::string, std::string>(), USHORT port = 80)
 		*
 		* \brief	Send HTTP PUT request.
 		*
@@ -358,16 +358,16 @@ namespace Just
 		*
 		* \return	A HttpResponse.
 		*/
-		HttpResponse HttpPut(const std::string& url,
+		HttpResponse Put(const std::string& url,
 			const std::unordered_map<std::string, std::string> data = std::unordered_map<std::string, std::string>(),
 			USHORT port = 80)
 		{
 			static std::string method = "PUT";
-			return SendHttpForm(url, method, data, port);
+			return SendForm(url, method, data, port);
 		}
 
 		/*!
-		* \fn	HttpResponse HttpDelete(const std::string& url, const std::unordered_map<std::string, std::string> additionalHeaders = std::unordered_map<std::string, std::string>(), USHORT port = 80)
+		* \fn	HttpResponse Delete(const std::string& url, const std::unordered_map<std::string, std::string> additionalHeaders = std::unordered_map<std::string, std::string>(), USHORT port = 80)
 		*
 		* \brief	Send HTTP DELETE request.
 		*
@@ -379,10 +379,10 @@ namespace Just
 		*
 		* \return	A HttpResponse.
 		*/
-		HttpResponse HttpDelete(const std::string& url, USHORT port = 80)
+		HttpResponse Delete(const std::string& url, USHORT port = 80)
 		{
 			static std::string method = "DELETE";
-			return SendHttp(url, method, std::string(), std::unordered_map<std::string, std::string>(), port = port);
+			return Send(url, method, std::string(), std::unordered_map<std::string, std::string>(), port = port);
 		}
 	}
 }

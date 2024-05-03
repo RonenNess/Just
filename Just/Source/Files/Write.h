@@ -14,7 +14,7 @@ namespace Just
 	namespace Files
 	{
 		/*!
-		 * \fn	void WriteTextFile(std::string path, std::string text)
+		 * \fn	void WriteText(std::string path, std::string text)
 		 *
 		 * \brief	Writes a text file.
 		 *
@@ -26,7 +26,7 @@ namespace Just
 		 * \param	append	If true, will append data to file if already exists.
 		 * \return	If succeed writing file.
 		 */
-		bool WriteTextFile(const std::string& path, const std::string& text, bool append = false)
+		bool WriteText(const std::string& path, const std::string& text, bool append = false)
 		{
 			// open output file
 			std::ofstream outfile;
@@ -47,7 +47,7 @@ namespace Just
 		}
 
 		/*!
-		 * \fn	void WriteBinaryFile(const std::string& path, const char* data, size_t size)
+		 * \fn	void WriteBinary(const std::string& path, const char* data, size_t size)
 		 *
 		 * \brief	Writes a binary file.
 		 *
@@ -60,7 +60,7 @@ namespace Just
 		 * \param	append	If true, will append data to file if already exists.
 		 * \return	If succeed writing file.
 		 */
-		bool WriteBinaryFile(const std::string& path, const char* data, size_t size, bool append = false)
+		bool WriteBinary(const std::string& path, const char* data, size_t size, bool append = false)
 		{
 			// open output file
 			std::ofstream outfile;

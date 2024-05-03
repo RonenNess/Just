@@ -34,89 +34,12 @@
     <Filter Include="Source\Strings">
       <UniqueIdentifier>{012f8c34-4480-4920-b4d3-949c161d3e16}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\Strings\Convert">
+    <Filter Include="Source\Strings\To">
       <UniqueIdentifier>{a220bdfd-17ed-4175-b7fa-57f5cb31709f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\Strings\ToString">
+    <Filter Include="Source\Strings\From">
       <UniqueIdentifier>{f36d9d9c-61e7-4953-9e11-554d6e4f2b8e}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Just.h">
-      <Filter>Source</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Files\All.h">
-      <Filter>Source\Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Files\Write.h">
-      <Filter>Source\Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Files\Read.h">
-      <Filter>Source\Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Files\Manage.h">
-      <Filter>Source\Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\DLLs\All.h">
-      <Filter>Source\DLLs</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\DLLs\Load.h">
-      <Filter>Source\DLLs</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Execute\All.h">
-      <Filter>Source\Execute</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Execute\Exe.h">
-      <Filter>Source\Execute</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Execute\Scripts.h">
-      <Filter>Source\Execute</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Http\All.h">
-      <Filter>Source\Http</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Http\HttpRequests.h">
-      <Filter>Source\Http</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Files\Folders.h">
-      <Filter>Source\Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\SharedMemory\All.h">
-      <Filter>Source\SharedMemory</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Strings\All.h">
-      <Filter>Source\Strings</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Strings\Convert\All.h">
-      <Filter>Source\Strings\Convert</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Strings\Convert\StringConvert.h">
-      <Filter>Source\Strings\Convert</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Strings\ToString\All.h">
-      <Filter>Source\Strings\ToString</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Strings\ToString\Arrays.h">
-      <Filter>Source\Strings\ToString</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Strings\ToString\Basics.h">
-      <Filter>Source\Strings\ToString</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Strings\ToString\Lists.h">
-      <Filter>Source\Strings\ToString</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Strings\ToString\Maps.h">
-      <Filter>Source\Strings\ToString</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\SharedMemory\SharedMemory.h">
-      <Filter>Source\SharedMemory</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -125,5 +48,79 @@
     <ClCompile Include="Just.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Just.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DLLs\All.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DLLs\Load.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Execute\All.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Execute\Exe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Execute\Scripts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Files\All.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Files\Folders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Files\Manage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Files\Read.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Files\Write.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Http\All.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Http\HttpRequests.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SharedMemory\All.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SharedMemory\SharedMemory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Strings\From\All.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Strings\From\Arrays.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Strings\From\Basics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Strings\From\Iterable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Strings\From\Maps.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Strings\To\All.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Strings\To\LPWSTR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Strings\To\Wide.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Strings\All.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -23,32 +23,32 @@
     <ProjectGuid>{5F0C873F-2955-4B25-9228-234DD94E2149}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Just</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -151,6 +151,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Just.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="Source\DLLs\All.h" />
     <ClInclude Include="Source\DLLs\Load.h" />
     <ClInclude Include="Source\Execute\All.h" />
@@ -159,32 +168,22 @@
     <ClInclude Include="Source\Files\All.h" />
     <ClInclude Include="Source\Files\Folders.h" />
     <ClInclude Include="Source\Files\Manage.h" />
-    <ClInclude Include="Source\Files\Write.h" />
     <ClInclude Include="Source\Files\Read.h" />
+    <ClInclude Include="Source\Files\Write.h" />
     <ClInclude Include="Source\Http\All.h" />
     <ClInclude Include="Source\Http\HttpRequests.h" />
     <ClInclude Include="Source\Just.h" />
     <ClInclude Include="Source\SharedMemory\All.h" />
     <ClInclude Include="Source\SharedMemory\SharedMemory.h" />
     <ClInclude Include="Source\Strings\All.h" />
-    <ClInclude Include="Source\Strings\Convert\All.h" />
-    <ClInclude Include="Source\Strings\Convert\StringConvert.h" />
-    <ClInclude Include="Source\Strings\ToString\All.h" />
-    <ClInclude Include="Source\Strings\ToString\Arrays.h" />
-    <ClInclude Include="Source\Strings\ToString\Basics.h" />
-    <ClInclude Include="Source\Strings\ToString\Lists.h" />
-    <ClInclude Include="Source\Strings\ToString\Maps.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="targetver.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Just.cpp" />
-    <ClCompile Include="stdafx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
+    <ClInclude Include="Source\Strings\From\All.h" />
+    <ClInclude Include="Source\Strings\From\Arrays.h" />
+    <ClInclude Include="Source\Strings\From\Basics.h" />
+    <ClInclude Include="Source\Strings\From\Iterable.h" />
+    <ClInclude Include="Source\Strings\From\Maps.h" />
+    <ClInclude Include="Source\Strings\To\All.h" />
+    <ClInclude Include="Source\Strings\To\LPWSTR.h" />
+    <ClInclude Include="Source\Strings\To\Wide.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -7,7 +7,7 @@
 #ifdef _WIN32
 #include <Windows.h>
 #include <algorithm>
-#include "../Strings/Convert/StringConvert.h"
+#include "../Strings/To/All.h"
 
 namespace Just
 {
@@ -37,12 +37,12 @@ namespace Just
 				auto tpath = std::string(path);
 				std::replace(tpath.begin(), tpath.end(), '\\', '/');
 				if (*(tpath.end() - 1) != '/') tpath += '/';
-				wpath = Just::StringConvert::StringToWide(tpath);
+				wpath = Just::String::To::Wide(tpath);
 			}
 			// convert path to wchar without fixing slashes
 			else
 			{
-				wpath = Just::StringConvert::StringToWide(path);
+				wpath = Just::String::To::Wide(path);
 			}
 
 			// temp buffers to hold parts

@@ -38,7 +38,7 @@ namespace Just
 		};
 
 		/*!
-		 * \fn	ProcessOutput ExecuteCommand(const std::string& command)
+		 * \fn	ProcessOutput Command(const std::string& command)
 		 *
 		 * \brief	Executes a command.
 		 *
@@ -49,7 +49,7 @@ namespace Just
 		 *
 		 * \return	A ProcessOutput.
 		 */
-		ProcessOutput ExecuteCommand(const std::string& command)
+		ProcessOutput Command(const std::string& command)
 		{
 			ProcessOutput ret;
 			char   psBuffer[128];

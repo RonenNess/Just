@@ -13,7 +13,7 @@ namespace Just
 	namespace Execute
 	{
 		/*!
-		 * \fn	ProcessOutput ExecuteScript(const std::string& scriptType, const std::string& scriptPath, const std::string& params = std::string())
+		 * \fn	ProcessOutput Script(const std::string& scriptType, const std::string& scriptPath, const std::string& params = std::string())
 		 *
 		 * \brief	Executes the script operation
 		 *
@@ -26,13 +26,13 @@ namespace Just
 		 *
 		 * \return	A ProcessOutput.
 		 */
-		ProcessOutput ExecuteScript(const std::string& scriptType, const std::string& scriptPath, const std::string& params = std::string())
+		ProcessOutput Script(const std::string& scriptType, const std::string& scriptPath, const std::string& params = std::string())
 		{
-			return ExecuteCommand(scriptType + " \"" + scriptPath + "\" " + params);
+			return Command(scriptType + " \"" + scriptPath + "\" " + params);
 		}
 
 		/*!
-		 * \fn	ProcessOutput ExecutePythonScript(const std::string& scriptPath, const std::string& params = std::string())
+		 * \fn	ProcessOutput PythonScript(const std::string& scriptPath, const std::string& params = std::string())
 		 *
 		 * \brief	Executes Python script.
 		 *
@@ -44,14 +44,14 @@ namespace Just
 		 *
 		 * \return	A ProcessOutput.
 		 */
-		ProcessOutput ExecutePythonScript(const std::string& scriptPath, const std::string& params = std::string())
+		ProcessOutput PythonScript(const std::string& scriptPath, const std::string& params = std::string())
 		{
 			static std::string type = "python";
-			return ExecuteScript(type, scriptPath, params);
+			return Script(type, scriptPath, params);
 		}
 
 		/*!
-		* \fn	ProcessOutput ExecutePerlScript(const std::string& scriptPath, const std::string& params = std::string())
+		* \fn	ProcessOutput PerlScript(const std::string& scriptPath, const std::string& params = std::string())
 		*
 		* \brief	Executes Perl script.
 		*
@@ -63,14 +63,14 @@ namespace Just
 		*
 		* \return	A ProcessOutput.
 		*/
-		ProcessOutput ExecutePerlScript(const std::string& scriptPath, const std::string& params = std::string())
+		ProcessOutput PerlScript(const std::string& scriptPath, const std::string& params = std::string())
 		{
 			static std::string type = "perl";
-			return ExecuteScript(type, scriptPath, params);
+			return Script(type, scriptPath, params);
 		}
 
 		/*!
-		* \fn	ProcessOutput ExecuteRubyScript(const std::string& scriptPath, const std::string& params = std::string())
+		* \fn	ProcessOutput RubyScript(const std::string& scriptPath, const std::string& params = std::string())
 		*
 		* \brief	Executes Ruby script.
 		*
@@ -82,10 +82,10 @@ namespace Just
 		*
 		* \return	A ProcessOutput.
 		*/
-		ProcessOutput ExecuteRubyScript(const std::string& scriptPath, const std::string& params = std::string())
+		ProcessOutput RubyScript(const std::string& scriptPath, const std::string& params = std::string())
 		{
 			static std::string type = "ruby";
-			return ExecuteScript(type, scriptPath, params);
+			return Script(type, scriptPath, params);
 		}
 	}
 }

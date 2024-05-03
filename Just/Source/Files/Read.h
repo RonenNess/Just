@@ -15,7 +15,7 @@ namespace Just
 	namespace Files
 	{
 		/*!
-		 * \fn	std::string ReadTextFile(const std::string& path, const std::string& text)
+		 * \fn	std::string ReadText(const std::string& path, const std::string& text)
 		 *
 		 * \brief	Reads a whole text file.
 		 *
@@ -27,7 +27,7 @@ namespace Just
 		 *
 		 * \return	True if successfully read the file.
 		 */
-		bool ReadTextFile(const std::string& path, std::string& out)
+		bool ReadText(const std::string& path, std::string& out)
 		{
 			// open file
 			std::ifstream infile;
@@ -46,7 +46,7 @@ namespace Just
 		}
 
 		/*!
-		 * \fn	std::vector<char> ReadBinaryFile(const std::string& path, const char* data, size_t size)
+		 * \fn	std::vector<char> ReadBinary(const std::string& path, const char* data, size_t size)
 		 *
 		 * \brief	Reads a whole binary file.
 		 *
@@ -58,7 +58,7 @@ namespace Just
 		 *
 		 * \return	True if successfully read the file.
 		 */
-		bool ReadBinaryFile(const std::string& path, std::vector<char>& out)
+		bool ReadBinary(const std::string& path, std::vector<char>& out)
 		{
 			// open file
 			std::ifstream infile;

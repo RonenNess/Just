@@ -13,7 +13,7 @@ namespace Just
 	namespace DLLs
 	{
 		/*!
-		 * \fn	bool LoadDLL(const std::string& dllPath)
+		 * \fn	bool Load(const std::string& dllPath)
 		 *
 		 * \brief	Loads a DLL from path.
 		 *
@@ -24,7 +24,7 @@ namespace Just
 		 *
 		 * \return	True if succeed to load DLL, false otherwise.
 		 */
-		bool LoadDLL(const std::string& dllPath)
+		bool Load(const std::string& dllPath)
 		{
 			return LoadLibrary(LPCWSTR(dllPath.c_str())) != NULL;
 		}
@@ -42,7 +42,7 @@ namespace Just
 		 *
 		 * \return	Method pointer, or null if failed to load DLL or get method.
 		 */
-		void* GetMethodFromDLL(const std::string& dllPath, const std::string& methodName)
+		void* GetMethod(const std::string& dllPath, const std::string& methodName)
 		{
 			// load library
 			HINSTANCE hGetProcIDDLL = LoadLibrary(LPCWSTR(dllPath.c_str()));
