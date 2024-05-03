@@ -1,3 +1,3 @@
 #pragma once
-#include "Exe.h"
+#include "Command.h"
 #include "Scripts.h"

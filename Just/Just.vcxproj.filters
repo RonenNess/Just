@@ -62,7 +62,7 @@
     <ClInclude Include="Source\Execute\All.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Execute\Exe.h">
+    <ClInclude Include="Source\Execute\Command.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\Execute\Scripts.h">

@@ -6,7 +6,7 @@
 #pragma once
 
 #ifdef _WIN32
-#include "Exe.h"
+#include "Command.h"
 
 namespace Just
 {

@@ -1,5 +1,5 @@
 /*!
- * \file	Source\Execute\Exe.h.
+ * \file	Source\Execute\Command.h.
  *
  * \brief	Execute exe files.
  */

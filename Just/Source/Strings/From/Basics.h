@@ -1,5 +1,5 @@
 /*!
-* \file	Source\Strings\ToString\Basics.h.
+* \file	Source\Strings\From\Basics.h.
 *
 * \brief	Used internally, convert some basic types to string.
 */

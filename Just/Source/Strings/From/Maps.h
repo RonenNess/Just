@@ -1,5 +1,5 @@
 /*!
-* \file	Source\Strings\ToString\Maps.h.
+* \file	Source\Strings\From\Maps.h.
 *
 * \brief	Convert maps to string.
 */

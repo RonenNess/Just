@@ -1,5 +1,5 @@
 /*!
-* \file	Source\Strings\ToString\Lists.h.
+* \file	Source\Strings\From\Iterable.h.
 *
 * \brief	Convert iterable lists to string.
 */

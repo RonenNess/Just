@@ -1,5 +1,5 @@
 /*!
-* \file	Source\Strings\ToString\Arrays.h.
+* \file	Source\Strings\From\Arrays.h.
 *
 * \brief	Convert arrays to string.
 */
