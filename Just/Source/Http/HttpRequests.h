@@ -270,7 +270,7 @@ namespace Just
 			if (hostStart != std::string::npos) { host = host.substr(hostStart + 1); }
 
 			// convert headers to string
-			auto headers = Just::String::ParseMap(additionalHeaders, ":", "\n");
+			auto headers = Just::String::From::Map(additionalHeaders, ":", "\n");
 
 			// send http request
 			return Send(host, method, action, content, headers, port);
@@ -298,7 +298,7 @@ namespace Just
 		{
 			auto headers = std::unordered_map<std::string, std::string>();
 			headers["Content-Type"] = "application/x-www-form-urlencoded";
-			auto content = Just::String::ParseMap(data, "=", "&");
+			auto content = Just::String::From::Map(data, "=", "&");
 			return Send(url, method, content, headers, port);
 		}
 
